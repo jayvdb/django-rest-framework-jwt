@@ -4,7 +4,7 @@ DEBUG_PROPAGATE_EXCEPTIONS=True
 DATABASES={
 'default': {
 'ENGINE': 'django.db.backends.sqlite3',
-'NAME': ':memory:',
+'NAME': 'foo.sqlite',
 }
 }
 
