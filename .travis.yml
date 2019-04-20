@@ -18,7 +18,10 @@ jobs:
   include:
     - stage: test
       python: 3.7
-      install: pip install tox tox-venv
+      install:
+        - pip install PyJWT pytest-django Django~=2.2 djangorestframework~=3.8.0
+        - pip install .
+      script: pytest
       env: TOXENV=py37-dj22-drf39
     - stage: test
       python: '2.7.13'
