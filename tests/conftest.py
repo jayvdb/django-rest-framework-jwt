@@ -36,6 +36,7 @@ def pytest_configure():
             'django.contrib.auth',
             'django.contrib.contenttypes',
             'django.contrib.sessions',
+            'django.contrib.messages',
             'django.contrib.sites',
             'django.contrib.staticfiles',
 
