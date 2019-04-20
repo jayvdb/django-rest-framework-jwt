@@ -22,9 +22,10 @@ jobs:
         - pip install PyJWT pytest==3.10.1 pytest-django Django~=2.2 djangorestframework~=3.8.0 mock pytest-runner
         - pip install .
       script:
-        - PYTHONPATH=.:src django-admin makemigrations --settings=tests.settings tests
-        - PYTHONPATH=.:src django-admin migrate --settings=tests.settings
-        - pytest -vv --nomigrations
+        # PYTHONPATH=.:src django-admin makemigrations --settings=tests.settings tests
+        # PYTHONPATH=.:src django-admin migrate --settings=tests.settings
+        # pytest -vv --nomigrations
+        - pytest -vv
       env: TOXENV=py37-dj22-drf39
     - stage: test
       python: '2.7.13'
