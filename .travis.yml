@@ -2,16 +2,16 @@ dist: xenial
 language: python
 cache: pip
 python:
-#  - 2.7.13
-#  - 3.4
-#  - 3.5
+  - 2.7.13
+  - 3.4
+  - 3.5
   - 3.6
   - 3.7
 env:
   - CODECOV=true
 
 install:
-  - pip install tox tox-venv tox-travis
+  - pip install tox tox-travis
 script:
   - tox
 jobs:
