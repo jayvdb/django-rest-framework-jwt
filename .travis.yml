@@ -21,7 +21,7 @@ jobs:
       install:
         - pip install PyJWT pytest==3.10.1 pytest-django Django~=2.2 djangorestframework~=3.8.0 mock pytest-runner
         - pip install .
-      script: python setup.py pytest
+      script: pytest --migrations
       env: TOXENV=py37-dj22-drf39
     - stage: test
       python: '2.7.13'
