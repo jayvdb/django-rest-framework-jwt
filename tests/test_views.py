@@ -19,7 +19,7 @@ from tests.utils import \
 
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
-import pytest
+User = get_user_model()
 
 
 def setup_default_mocked_api_settings(mock_settings):
@@ -29,11 +29,9 @@ def setup_default_mocked_api_settings(mock_settings):
     return mock_settings
 
 
-@pytest.mark.django_db
 class TestAuthViews(APITestCase):
 
     def setUp(self):
-        User = get_user_model()
         self.active_user = User.objects.create_user(
             username='foobar', email='foobar@example.com', password='foo',
             is_active=True
@@ -278,11 +276,10 @@ class TestAuthViews(APITestCase):
         self.assertEqual(refresh_response.json(), expected_output)
 
 
-@pytest.mark.django_db
 class TestAuthIntegration(APITestCase):
 
     def setUp(self):
-        self.user = get_user_model().objects.create_user(
+        self.user = User.objects.create_user(
             username='foobar', email='foobar@example.com', password='foo',
             is_active=True
         )

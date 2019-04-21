@@ -18,7 +18,6 @@ def invalid_JWT_REFRESH_EXPIRATION_DELTA_setting():
     return {'JWT_REFRESH_EXPIRATION_DELTA': 'invalid'}
 
 
-@pytest.mark.django_db
 class SettingsTestCase(TestCase):
 
     @classmethod
