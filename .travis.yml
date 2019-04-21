@@ -11,7 +11,7 @@ env:
   - CODECOV=true
 
 install:
-  - pip install tox tox-travis
+  - pip install tox-travis
 script:
   - tox
 jobs:
@@ -24,7 +24,7 @@ jobs:
       script:
         - PYTHONPATH=.:src django-admin makemigrations --settings=tests.settings tests
         - PYTHONPATH=.:src django-admin migrate --settings=tests.settings
-        - PYTHONPATH=.:src pytest -vv
+        - PYTHONPATH=.:src python setup.py pytest
       env: TOXENV=py37-dj22-drf39
     - stage: test
       python: '2.7.13'
